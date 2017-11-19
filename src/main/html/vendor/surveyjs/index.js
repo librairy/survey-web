@@ -28,8 +28,12 @@ function init() {
 		    'data': JSON.stringify(result.data),
 		    'dataType': 'json',
 			'success': function () {
-			        alert("Thanks!"); 
-				}
+				console.log("success!");
+			},
+			'error': function(XMLHttpRequest, textStatus, errorThrown) {
+				alert("invalid email. Results not accepted");
+				console.log("error: " + errorThrown);
+			}
 		});
 		
     });
